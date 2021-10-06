@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("partials/head.ejs", {title: 'Budget - Index Page'}) %> 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="/skeleton.css">
+</head>
+<body>
+    <%- include("./partials/header.ejs") %>
+    <div class = "container">
+    <h1>Budgtr</h1>
+    <nav>
+        <button><a href="/budgets/new">New item</a></button>
+    </nav>
+    <table>
+        <tbody>
+            <% for (let i = 0; i < allBudgets.length; i++) { %>
+            <tr>
+                <td><%= allBudgets[i].date %></td>
+                <td><a href="/budgets/<%= i %>">
+                        <%= allBudgets[i].name %>
+                    </a>
+                </td>
+                <td><%= allBudgets[i].amount %></td>
+            <% } %>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<%- include("./partials/footer.ejs") %>
+</body>
+</html>

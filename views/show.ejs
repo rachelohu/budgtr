@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include("partials/head.ejs", {title: 'Budget - Show Page'}) %> 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/normalize.css">
+    <link rel="stylesheet" href="/skeleton.css">
+</head>
+<body>
+    <%- include("./partials/header.ejs") %>
+    <div class= "container">
+    <h2><%= budget.name %></h2>
+   
+    <button><a href="/budgets">Back</a></button>
+    
+    <ul><%= budget.date %></ul>
+    <ul><%= budget.name %></ul>
+    <ul><%= budget.from %></ul>
+    <ul><%= budget.amount %></ul>
+    <ul><%= budget.tags %></ul>
+   
+</div>
+</body>
+<%- include("./partials/footer.ejs") %>
+</html>
